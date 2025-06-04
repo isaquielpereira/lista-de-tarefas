@@ -1,25 +1,60 @@
-const entradaTarefa =document.getElementById('entradaTarefa');
-const listaTarefas =document.getElementById('listatarefas');
+const entradaTarefa = document.getElementById("entradaTarefa");
+const listaTarefas = document.getElementById("listatarefas");
 
-let tarefas = [];
+let tarefas = JSON.parse(localStorage.getItem("tarefas")) || [];
+let posicaoEditar = undefined;
+
+carregarTarefas();
 
 function adicionarTarefa() {
-    let texto = entradaTarefa.value.trim();
-    if (texto!="") {
-        tarefas.push (entradaTarefa.value);
-        let item =document.createElement('li');
-        item.innerHTML = `<span>${entradaTarefa.value}<span>`;
-        entradaTarefa.value = "";
-        listaTarefas.appendChild(item);
-
+  let texto = entradaTarefa.value.trim();
+  if (texto != "") {
+    if (posicaoEditar != undefined) {
+      tarefas[posicaoEditar] = entradaTarefa.value;
+      posicaoEditar = undefined;
     } else {
-    alert("tarefainvalida");
+      tarefas.push(entradaTarefa.value);
     }
+
+    entradaTarefa.value = "";
+    salvarTarefas();
+    carregarTarefas();
+  } else {
+    alert("tarefainvalida");
+  }
 }
 
-entradaTarefa.addEventListener('keypress',function (tecla)
-{
-    if(tecla.key ==='Enter'){
-        adicionarTarefa();
-    }
+entradaTarefa.addEventListener("keypress", function (tecla) {
+  if (tecla.key === "Enter") {
+    adicionarTarefa();
+  }
 });
+
+function carregarTarefas() {
+  listaTarefas.innerHTML = "";
+  tarefas.forEach((tarefa, posicao) => {
+    const item = document.createElement("li");
+    item.className = "item-lista";
+    item.innerHTML = `
+    <span>${tarefa}</span>
+    <button id="botaoremover" onclick="editarTarefa(${posicao})">Editar</button>
+    <button id="botaoremover" onclick="removerTarefa(${posicao})">X</button>
+    `;
+    listaTarefas.appendChild(item);
+  });
+}
+
+function removerTarefa(posicao) {
+  tarefas.splice(posicao, 1);
+  salvarTarefas();
+  carregarTarefas();
+}
+
+function salvarTarefas() {
+  localStorage.setItem("tarefas", JSON.stringify(tarefas));
+}
+
+function editarTarefa(posicao) {
+  posicaoEditar = posicao;
+  entradaTarefa.value = tarefas[posicao];
+}
