@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>Currículo - Isaquiel Pereira</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    h1 {
+      color: #2c3e50;
+    }
+    h2 {
+      color: #2980b9;
+      margin-top: 30px;
+    }
+    ul {
+      padding-left: 20px;
+    }
+    p, li {
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Isaquiel Pereira Sampaio Duarte</h1>
+  <p><strong>Email:</strong> isaqadonai@gmail.com</p>
+  <p><strong>Telefone:</strong> (62) 98435-1360</p>
+  <p><strong>LinkedIn:</strong> linkedin.com/in/seunome</p>
+  <p><strong>GitHub:</strong> <a href="https://github.com/isaquielpereira" target="_blank">github.com/isaquielpereira</a></p>
+
+  <h2>Resumo Profissional</h2>
+  <p>
+    Tenho grande ambição em aprender sobre tecnologia. Estou apenas começando minha trajetória, mas com esforço, dedicação e disposição, alcançarei meus objetivos profissionais.
+  </p>
+
+  <h2>Experiência Profissional</h2>
+  <ul>
+    <li><strong>Auxiliar de Marceneiro</strong></li>
+    <li><strong>Instalador Eletricista</strong> - PSE Projetos e Serviços de Engenharia LTDA</li>
+    <li><strong>Auxiliar de Produção</strong> - Firnat Indústria e Comércio de Móveis Planejados</li>
+    <li><strong>Educador</strong> - Ministério Filantrópico Terra Fértil</li>
+  </ul>
+
+  <h2>Educação</h2>
+  <ul>
+    <li><strong>Curso Técnico em Desenvolvimento de Sistemas</strong> - SESI SENAI (2024 - 2025)</li>
+    <li><strong>Curso Técnico em Informática (básico)</strong> - Webê (2025)</li>
+  </ul>
+
+  <h2>Projetos</h2>
+  <ul>
+    <li>Primeiro projeto em HTML</li>
+    <li>Projetos com Arduino e conceitos de Indústria 4.0</li>
+  </ul>
+
+</body>
+</html>
